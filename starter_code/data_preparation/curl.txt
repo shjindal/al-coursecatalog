@@ -2,7 +2,7 @@ Using "curl" grab the course catalog - all of it - write output to catalog.html
 
 curl http://student.mit.edu/catalog/m1a.html \
 http://student.mit.edu/catalog/m1b.html \
-http://student.mit.edu/catalog/m1c.html \
+http://student.mit.edu/catalog/m1c.html >> catalog.html
 http://student.mit.edu/catalog/m2a.html \
 http://student.mit.edu/catalog/m2b.html \
 http://student.mit.edu/catalog/m2c.html \
