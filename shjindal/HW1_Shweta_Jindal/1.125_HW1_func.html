@@ -1,0 +1,82 @@
+<html>
+<head>
+<script src="chicago_ES.json"></script>
+<script type = "text/javascript">
+
+
+var DataSet = data.data;
+var police = 0;
+var policeSalary = 0;
+var citySalary=0;
+
+for (var i=0; i<data.data.length;i++)
+{
+		var salary1 = data.data[i][11];
+			if (Number(salary1) > 200000) 
+			{
+				citySalary++;  // number of city workers with salary > 200k?
+			}
+
+}
+
+
+function getPolice(x) 
+{
+		return x[10] == "POLICE"; 
+}
+
+
+
+   var filter_array = DataSet.filter(getPolice);
+
+   //var filter_array_reduce = filter_array.reduce(getPoliceSalary);
+
+   //  document.getElementById("demo").innerHTML
+
+for (var i=0; i< filter_array.length;i++)
+{
+	if (filter_array[i][11] > 200000)
+	{
+		police++;  //no of police officers earning more than 200k
+	}
+}
+
+for (var i=0; i< filter_array.length;i++)
+{
+	policeSalary+=Number(filter_array[i][11]); //total salary of all the chicago police officers
+}
+
+function myFunction1() {
+    document.getElementById("demo").innerHTML = police;
+}
+
+function myFunction2() {
+    document.getElementById("demo").innerHTML = policeSalary;
+}
+
+function myFunction3() {
+    document.getElementById("demo").innerHTML = citySalary;
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Homework 1</h1>
+
+<p id="demo"> Questions to follow; click to find answers :) </p>
+
+
+<button type="button" onclick="myFunction3()"> Q1 Number of Chicago City workers earning more than 200k? </button>
+<button type="button" onclick="myFunction1()"> Q2 Number of Chicago Police officers earning more than 200k? </button>
+<button type="button" onclick="myFunction2()"> Q3 Chicago Police Salary in $$$? </button>
+
+
+</body>
+
+
+
+</html>
